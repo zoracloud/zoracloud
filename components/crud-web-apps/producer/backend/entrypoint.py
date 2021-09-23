@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 
 
 def get_config(mode):
-    """Return a config based on the selected mode."""
+    """Return a yaml based on the selected mode."""
     config_classes = {
         config.BackendMode.DEVELOPMENT.value: config.DevConfig,
         config.BackendMode.DEVELOPMENT_FULL.value: config.DevConfig,

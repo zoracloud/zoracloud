@@ -12,7 +12,7 @@ REQUIRES = [
 
 setuptools.setup(
     name="zoracloud",
-    version="1.1",
+    version="0.0.0",
     author="allankiplangat22@gmail.com",
     description="A package with a base Flask CRUD backend common code",
     packages=setuptools.find_packages(),
