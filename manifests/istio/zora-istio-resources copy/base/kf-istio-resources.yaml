@@ -1,0 +1,50 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: zora-gateway
+  namespace: zora
+
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    # - '*zoratech.dev'
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      # credentialName: zoratech-credential
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+
+# spec:
+#   selector:
+#     app: istio-ingressgateway
+#     istio: ingressgateway
+#   servers:
+#   - port:
+#       number: 80
+#       name: http
+#       protocol: HTTP
+#     hosts:
+#     - "app.zoratech.dev"
+#     - "*"
+    
+
+  # servers:
+  # - port:
+  #     number: 443
+  #     name: https
+  #     protocol: HTTPS
+  #   tls:
+  #     mode: SIMPLE
+  #     # credentialName: zoratech-credential
+  #     privateKey: /etc/istio/zoratech-credential/tls.key
+  #     serverCertificate: /etc/istio/zoratech-credential/tls.crt
+  #   hosts:
+  #   - "app.zoratech.dev"
+
