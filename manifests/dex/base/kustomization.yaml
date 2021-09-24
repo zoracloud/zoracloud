@@ -6,7 +6,6 @@ resources:
 - config-map.yaml
 - crds.yaml
 - deployment.yaml
-- dest-rule.yaml
 - service.yaml
 generatorOptions:
   disableNameSuffixHash: true

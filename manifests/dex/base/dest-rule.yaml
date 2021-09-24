@@ -1,9 +1,0 @@
-apiVersion: "networking.istio.io/v1alpha3"
-kind: DestinationRule
-metadata:
-  name: dex
-spec:
-  host: dex.auth.svc.cluster.local
-  trafficPolicy:
-    tls:
-      mode: DISABLE
