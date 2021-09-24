@@ -21,8 +21,8 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
-    - '*'
-    # - '*zoratech.dev'
+    # - '*'
+    - '*zoratech.dev'
     port:
       name: https
       number: 443
