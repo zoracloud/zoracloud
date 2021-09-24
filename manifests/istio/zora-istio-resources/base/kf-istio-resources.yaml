@@ -4,34 +4,34 @@ metadata:
   name: zora-gateway
   namespace: zora
 
-spec:
-  selector:
-    app: istio-ingressgateway
-    istio: ingressgateway
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "*"
-
 # spec:
 #   selector:
+#     app: istio-ingressgateway
 #     istio: ingressgateway
 #   servers:
-#   - hosts:
-#     - '*'
-#     # - '*zoratech.dev'
-#     port:
-#       name: https
-#       number: 443
-#       protocol: HTTPS
-#     tls:
-#       mode: SIMPLE
-#       # credentialName: zoratech-credential
-#       privateKey: /etc/istio/ingressgateway-certs/tls.key
-#       serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+#   - port:
+#       number: 80
+#       name: http
+#       protocol: HTTP
+#     hosts:
+#     - "*"
+
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    # - '*zoratech.dev'
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      # credentialName: zoratech-credential
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
 
 # spec:
 #   selector:
