@@ -11,9 +11,9 @@ REQUIRES = [
 ]
 
 setuptools.setup(
-    name="zoracloud",
-    version="0.0.0",
-    author="allankiplangat22@gmail.com",
+    name="kubeflow",
+    version="1.1",
+    author="kubeflow-dev-team",
     description="A package with a base Flask CRUD backend common code",
     packages=setuptools.find_packages(),
     install_requires=REQUIRES,

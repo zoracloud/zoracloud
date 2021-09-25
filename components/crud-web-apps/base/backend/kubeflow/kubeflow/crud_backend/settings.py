@@ -1,4 +1,3 @@
-
 import os
 
 SECURE_COOKIES = os.getenv("APP_SECURE_COOKIES", "true").lower() == "true"

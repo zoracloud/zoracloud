@@ -1,4 +1,5 @@
 import logging
+
 from flask import Flask
 
 from .authn import bp as authn_bp
@@ -9,7 +10,7 @@ from .probes import bp as probes_bp
 from .routes import bp as base_routes_bp
 from .serving import bp as serving_bp
 
-LOG_FORMAT = "%()s | %(name)s | %(levelname)s | %(message)s"
+LOG_FORMAT = "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
 
 
 def create_app(name, static_folder, config):
@@ -23,7 +24,7 @@ def create_app(name, static_folder, config):
             or config.ENV == BackendMode.DEVELOPMENT_FULL.value):
         log.warn("RUNNING IN DEVELOPMENT MODE")
 
-    # Register the blueprints
+    # Register all the blueprints
     app.register_blueprint(authn_bp)
     app.register_blueprint(errors_bp)
     app.register_blueprint(csrf_bp)
