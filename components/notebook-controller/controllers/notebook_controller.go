@@ -19,12 +19,13 @@ package controllers
 import (
 	"context"
 
+	// "github.com/zoracloud/components/notebook-controller/api/v1beta1"
+	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/log"
-
-	notebookv1beta1 "github.com/zoracloud/components/notebook-controller/api/v1beta1"
+	// "sigs.k8s.io/controller-runtime/pkg/log"
+	// notebookv1beta1 "github.com/zoracloud/components/notebook-controller/api/v1beta1"
 )
 
 // NotebookReconciler reconciles a Notebook object
@@ -46,17 +47,25 @@ type NotebookReconciler struct {
 //
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.8.3/pkg/reconcile
-func (r *NotebookReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+func (r *NotebookReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
+	ctx := context.Background()
+	// log := r.Log.WithValues("notebook", req.NamespacedName)
 
-	// your logic here
+	// TODO(yanniszark): Can we avoid reconciling Events and Notebook in the same queue?
+	event := &corev1.Event{}
+	var getEventErr error
+	getEventErr = r.Get(ctx, req.NamespacedName, event)
+
+	if getEventErr == nil {
+		// involvedNotebook := &notebookv1beta1.Notebook{}
+		// nbName, err := n
+
+	}
 
 	return ctrl.Result{}, nil
 }
 
 // SetupWithManager sets up the controller with the Manager.
 func (r *NotebookReconciler) SetupWithManager(mgr ctrl.Manager) error {
-	return ctrl.NewControllerManagedBy(mgr).
-		For(&notebookv1beta1.Notebook{}).
-		Complete(r)
+	return nil
 }
