@@ -29,13 +29,7 @@ type NotebookSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Notebook. Edit notebook_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
-}
-
-// NotebookStatus defines the observed state of Notebook
-type NotebookStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	Template NotebookTemplateSpec `json:"template,omitempty"`
 }
 
 //+kubebuilder:object:root=true
