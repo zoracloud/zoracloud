@@ -8,7 +8,7 @@ metadata:
   name: dex
 spec:
   gateways:
-  - zora/zora-gateway
+  - zoracloud/zoracloud-gateway
   hosts:
   - '*'
   http:

@@ -1,0 +1,6 @@
+apiVersion: profile.zoracloud.ai/v1
+kind: Profile
+metadata:
+  name: profile-sample
+spec:
+  # TODO(user): Add fields here

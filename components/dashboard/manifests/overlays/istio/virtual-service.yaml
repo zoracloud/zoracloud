@@ -4,7 +4,7 @@ metadata:
   name: centraldashboard
 spec:
   gateways:
-  - zora-gateway
+  - zoracloud-gateway
   hosts:
   - '*'
   http:

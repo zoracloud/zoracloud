@@ -24,3 +24,6 @@ resources:
 
 # zoracloud Istio Resources
 - ../istio-1-9/zoracloud-istio-resources/base
+
+# Central Dashboard
+- ../../components/dashboard/manifests/overlays/istio

@@ -5,7 +5,7 @@ resources:
 - ../../base
 - virtual-service.yaml
 
-namespace: zora
+namespace: zoracloud
 
 commonLabels:
   kustomize.component: centraldashboard
