@@ -6,6 +6,7 @@ from apps import default
 
 log = logging.getLogger(__name__)
 
+
 def get_config(mode):
     """Return a config based on the selected mode."""
     config_classes = {

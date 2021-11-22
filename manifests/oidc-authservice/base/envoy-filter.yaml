@@ -39,4 +39,4 @@ spec:
               authorization_response:
                 allowed_upstream_headers:
                   patterns:
-                    - exact: "kubeflow-userid"
+                    - exact: "zoracloud-userid"

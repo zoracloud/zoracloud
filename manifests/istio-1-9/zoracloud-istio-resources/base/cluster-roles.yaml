@@ -3,13 +3,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: kubeflow-istio-admin
+  name: zoracloud-istio-admin
   labels:
-    rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
+    rbac.authorization.zoracloud.org/aggregate-to-zoracloud-admin: "true"
 aggregationRule:
   clusterRoleSelectors:
   - matchLabels:
-      rbac.authorization.kubeflow.org/aggregate-to-kubeflow-istio-admin: "true"
+      rbac.authorization.zoracloud.org/aggregate-to-zoracloud-istio-admin: "true"
 rules: []
 
 ---
@@ -17,10 +17,10 @@ rules: []
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: kubeflow-istio-edit
+  name: zoracloud-istio-edit
   labels:
-    rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
-    rbac.authorization.kubeflow.org/aggregate-to-kubeflow-istio-admin: "true"
+    rbac.authorization.zoracloud.org/aggregate-to-zoracloud-edit: "true"
+    rbac.authorization.zoracloud.org/aggregate-to-zoracloud-istio-admin: "true"
 rules:
 - apiGroups: 
   - istio.io
@@ -41,9 +41,9 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: kubeflow-istio-view
+  name: zoracloud-istio-view
   labels:
-    rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
+    rbac.authorization.zoracloud.org/aggregate-to-zoracloud-view: "true"
 rules:
 - apiGroups:
   - istio.io

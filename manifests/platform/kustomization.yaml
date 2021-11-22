@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+# Cert-Manager
+# - ../common/cert-manager/cert-manager/base
+# - ../common/cert-manager/zoracloud-issuer/base
+# Istio
+- ../istio-1-9/istio-crds/base
+- ../istio-1-9/istio-namespace/base
+- ../istio-1-9/istio-install/base
+
+# Dex
+- ../dex/overlays/istio
+
+# OIDC Authservice
+- ../oidc-authservice/base
+
+# zoracloud namespace
+- ../zoracloud-namespace/base
+
+# zoracloud Roles
+- ../zoracloud-roles/base
+
+# zoracloud Istio Resources
+- ../istio-1-9/zoracloud-istio-resources/base

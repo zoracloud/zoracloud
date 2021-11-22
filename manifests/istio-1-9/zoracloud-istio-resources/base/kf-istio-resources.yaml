@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: zora-gateway
+  name: zoracloud-gateway
 spec:
   selector:
     istio: ingressgateway

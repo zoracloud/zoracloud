@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - kf-istio-resources.yaml
 - cluster-roles.yaml
-namespace: zora
+namespace: zoracloud
