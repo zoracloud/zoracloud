@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace:  zoracloud
+commonLabels:
+  app.kubernetes.io/name: zora-pipelines
+  app.kubernetes.io/component: ml-pipeline
